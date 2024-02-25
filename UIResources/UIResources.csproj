@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EB4F72B-5AD4-4368-8193-DEA868819C36}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIResources</RootNamespace>
+    <AssemblyName>UIResources</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Build\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Build\Output\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType3\FX8_without_border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StyleSheets\Buttons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="StyleSheets\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="StyleSheets\ComboBoxes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="StyleSheets\CovVLEXHomeStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="StyleSheets\CovVLEXLoginStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="StyleSheets\Labels.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="StyleSheets\MainWindowFrameStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="StyleSheets\ProgressBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\arrow.png" />
+    <Resource Include="Images\ClientImages\back.png" />
+    <Resource Include="Images\ClientImages\BackArrow.png" />
+    <Resource Include="Images\ClientImages\bell-512.png" />
+    <Resource Include="Images\ClientImages\CovRDMVLEXIcon.ico" />
+    <Resource Include="Images\ClientImages\ic-back.png" />
+    <Resource Include="Images\ClientImages\ic-bell.png" />
+    <Resource Include="Images\ClientImages\ic-chevron-right%402x.png" />
+    <Resource Include="Images\ClientImages\ic-chevron-right%403x.png" />
+    <Resource Include="Images\ClientImages\ic-chevron-right.png" />
+    <Resource Include="Images\ClientImages\ic-device%402x.png" />
+    <Resource Include="Images\ClientImages\ic-device%403x.png" />
+    <Resource Include="Images\ClientImages\ic-device.png" />
+    <Resource Include="Images\ClientImages\medtronicLogo.png" />
+    <Resource Include="Images\ClientImages\pause.jpg" />
+    <Resource Include="Images\ClientImages\play.jpg" />
+    <Resource Include="Images\ClientImages\stop.jpg" />
+    <Resource Include="Images\ClientImages\user.png" />
+    <Resource Include="Images\ClientImages\volume.png" />
+    <Resource Include="Images\ClientImages\WarningSymbol.JPG" />
+    <Resource Include="Images\DeviceType1\LS10_without_border.png" />
+    <Resource Include="Images\DeviceType2\Signia_without_border.png" />
+    <Resource Include="Images\DeviceType4\ic-connector%402x.png" />
+    <Resource Include="Images\DeviceType4\img-vallyelab-ft-10-selected%402x.png" />
+    <Resource Include="Images\DeviceType4\img-vallyelab-ft-10-selected%403x.png" />
+    <Resource Include="Images\DeviceType4\Online.png" />
+    <Resource Include="Images\UI_Images\ic-chevron-right%402x.png" />
+    <Resource Include="Images\UI_Images\ic-chevron-right%403x.png" />
+    <Resource Include="Images\UI_Images\ic-chevron-right.png" />
+    <Resource Include="Images\UI_Images\ic-device%402x.png" />
+    <Resource Include="Images\UI_Images\ic-device%403x.png" />
+    <Resource Include="Images\UI_Images\ic-device.png" />
+    <Resource Include="Images\UI_Images\img-valleylab-ft-10-online%402x.png" />
+    <Resource Include="Images\UI_Images\img-valleylab-ft-10-online%403x.png" />
+    <Resource Include="Images\UI_Images\img-valleylab-ft-10-online.png" />
+    <Resource Include="Images\UI_Images\img-valleylab-fx-8%402x.png" />
+    <Resource Include="Images\UI_Images\img-valleylab-fx-8%403x.png" />
+    <Resource Include="Images\UI_Images\img-valleylab-fx-8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\Server_Online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType4\ConnectorNew%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StyleSheets\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\Info-Icon.png" />
+    <Resource Include="Images\DeviceType4\DeviceWithNameImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType2\DeviceWithNameImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType3\DeviceWithNameImage.png" />
+    <Resource Include="Images\DeviceType1\DeviceWithNameImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\ic-connected.png" />
+    <Resource Include="Images\ClientImages\ic-disconnect.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI_Images\clock%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI_Images\download%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI_Images\detect%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\LogOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType1\Docking.png" />
+    <Resource Include="Images\DeviceType2\Docking.png" />
+    <Resource Include="Images\DeviceType3\Docking.png" />
+    <Resource Include="Images\DeviceType4\Docking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\info.png" />
+    <Resource Include="Images\ClientImages\upload-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType2\HomeScreenDeviceImage.png" />
+    <Resource Include="Images\DeviceType4\HomeScreenDeviceImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType1\HomeScreenDeviceImage.png" />
+    <Resource Include="Images\DeviceType3\HomeScreenDeviceImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI_Images\checkmark%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI_Images\download-copy%403x.png" />
+    <Resource Include="Images\UI_Images\docking%403x.png" />
+    <Resource Include="Images\DeviceType4\FT10_without_border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI_Images\error%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\CloseCircular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\zero-notifications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\infoImage.png" />
+    <Resource Include="Images\ClientImages\Success.png" />
+    <Resource Include="Images\ClientImages\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType4\beginSwupdate%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\ProgressPopUpWarning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\PB_Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType4\img-device%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\Warning_Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\Effra_Md.ttf" />
+    <Resource Include="Fonts\Effra_Rg.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Fonts\effra-bold.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\profilepic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI_Images\ic-reload%403x.png" />
+    <Resource Include="Images\ClientImages\help-white-foreground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\ill-login%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType3\BeginSoftwareZoomImage.png" />
+    <Resource Include="Images\DeviceType3\SettingZoomImage.png" />
+    <Resource Include="Images\DeviceType4\BeginSoftwareZoomImage.png" />
+    <Resource Include="Images\DeviceType4\SettingZoomImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Fonts\Effra_Lt.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI_Images\edit-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\FeatureTileImage.png" />
+    <Resource Include="Images\ClientImages\LogTileImage.png" />
+    <Resource Include="Images\ClientImages\SoftwareTileImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType5\DeviceWithNameImage.png" />
+    <Resource Include="Images\DeviceType5\Docking.png" />
+    <Resource Include="Images\DeviceType5\HomeScreenDeviceImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType5\ChargerBay_without_border.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\DeafultRuleStatus.png" />
+    <Resource Include="Images\ClientImages\NotMetRule.png" />
+    <Resource Include="Images\ClientImages\RuleMetStatus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType6\Situate_200_LDV.png" />
+    <Resource Include="Images\DeviceType7\Situate_200_X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType6\Docking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType7\Docking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\ShowPassword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType6\HomeScreenDeviceImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType7\HomeScreenDeviceImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType2\EGIA_EEA.png" />
+    <Resource Include="Images\DeviceType2\EGIA_ONLY.png" />
+    <Resource Include="Images\DeviceType2\updates_available.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType2\ic-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType2\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StyleSheets\Checkbox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType6\SettingZoomImage.png" />
+    <Resource Include="Images\DeviceType7\SettingZoomImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType6\DeviceRestartImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeviceType7\DeviceRestartImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StyleSheets\Expanders.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StyleSheets\TextBoxs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StyleSheets\ScrollBars.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StyleSheets\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="StyleSheets\ToolTip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ClientImages\group-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\ClientImages\Cross.png" />
+    <Resource Include="Images\ClientImages\TransferSavedSettingsTileImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StyleSheets\ScrollViewer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

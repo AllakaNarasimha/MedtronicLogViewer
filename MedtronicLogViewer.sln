@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedtronicLogViewer", "MedtronicLogViewer\MedtronicLogViewer.csproj", "{3E59C4DF-77E4-4D3C-B0C5-97087EDB1CE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIResources", "UIResources\UIResources.csproj", "{5EB4F72B-5AD4-4368-8193-DEA868819C36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMBase", "MVVMBase\MVVMBase.csproj", "{387F3A0F-E889-4D18-89B4-5C4B18441F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{06187235-A75E-4C22-AD30-8AEB4F91120F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScaleIndicator", "ScaleIndicator\ScaleIndicator.csproj", "{DCADE39D-8138-47D4-AF04-D6F9D34898EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E59C4DF-77E4-4D3C-B0C5-97087EDB1CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E59C4DF-77E4-4D3C-B0C5-97087EDB1CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E59C4DF-77E4-4D3C-B0C5-97087EDB1CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E59C4DF-77E4-4D3C-B0C5-97087EDB1CE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB4F72B-5AD4-4368-8193-DEA868819C36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB4F72B-5AD4-4368-8193-DEA868819C36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB4F72B-5AD4-4368-8193-DEA868819C36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB4F72B-5AD4-4368-8193-DEA868819C36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387F3A0F-E889-4D18-89B4-5C4B18441F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387F3A0F-E889-4D18-89B4-5C4B18441F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387F3A0F-E889-4D18-89B4-5C4B18441F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387F3A0F-E889-4D18-89B4-5C4B18441F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06187235-A75E-4C22-AD30-8AEB4F91120F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06187235-A75E-4C22-AD30-8AEB4F91120F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06187235-A75E-4C22-AD30-8AEB4F91120F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06187235-A75E-4C22-AD30-8AEB4F91120F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCADE39D-8138-47D4-AF04-D6F9D34898EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCADE39D-8138-47D4-AF04-D6F9D34898EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCADE39D-8138-47D4-AF04-D6F9D34898EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCADE39D-8138-47D4-AF04-D6F9D34898EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A8B8426C-7DC4-4C22-A0AA-D463920B9CD4}
+	EndGlobalSection
+EndGlobal

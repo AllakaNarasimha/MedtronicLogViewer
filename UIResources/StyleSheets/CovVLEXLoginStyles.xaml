@@ -1,0 +1,145 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="LoginSCreenLabel" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="#000100"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="LoginImgRHS" TargetType="{x:Type Image}">
+        <Setter Property="Width" Value="260.5"/>
+        <Setter Property="Height" Value="288"/>
+        <Setter Property="Margin" Value="251,0,0,0"/>
+        <Setter Property="Stretch" Value="Fill"/>
+    </Style>
+    <Style x:Key="LoginHeader" TargetType="{x:Type Rectangle}">
+        <Setter Property="Width" Value="512"/>
+        <Setter Property="Height" Value="16"/>
+        <Setter Property="Fill" Value="#ffffff"/>
+        <Setter Property="Margin" Value="0,0,0,304"/>
+    </Style>
+    <Style x:Key="LoginSeparator" TargetType="{x:Type Rectangle}">
+        <Setter Property="Width" Value="150.5"/>
+        <Setter Property="Height" Value="1.5"/>
+        <Setter Property="Fill" Value="#cccccc"/>
+    </Style>
+    <Style x:Key="LoginFooter" TargetType="{x:Type Rectangle}">
+        <Setter Property="Width" Value="512"/>
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Fill" Value="#ffffff"/>
+        <Setter Property="Margin" Value="0,304,0,0"/>
+    </Style>
+    <Style x:Key="LoginClientLogo" TargetType="{x:Type Image}">
+        <Setter Property="Width" Value="166.5"/>
+        <Setter Property="Height" Value="44"/>
+        <Setter Property="Margin" Value="15.5,24.5,330,251"/>
+        <Setter Property="Stretch" Value="Fill"/>
+    </Style>
+
+    <Style x:Key="LoginWindow" TargetType="{x:Type Page}">
+        <!--<Setter Property="Style" Value="{DynamicResource Effra}"/>-->
+        <Setter Property="Width" Value="512"/>
+        <Setter Property="Height" Value="320"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="Foreground" Value="#000100"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="LoginOnlineStatus" TargetType="{x:Type Image}">
+        <Setter Property="Width" Value="4"/>
+        <Setter Property="Height" Value="4"/>
+        <Setter Property="Margin" Value="6,6,0,0"/>
+        <Setter Property="Stretch" Value="Fill"/>
+    </Style>
+    <Style x:Key="LoginCopyRightLabel" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="8"/>
+        <Setter Property="Foreground" Value="#000100"/>
+        <Setter Property="Margin" Value="6,312,0,5"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+    </Style>
+    <Style x:Key="LoginUnameLabel" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="7.5"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="#000100"/>
+    </Style>
+    <Style x:Key="LoginUnameTxtBox" TargetType="{x:Type TextBox}">
+        <Setter Property="FontSize" Value="7.5"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="TextBlock.LineHeight" Value="1.33"/>
+        <Setter Property="Foreground" Value="#000100"/>
+    </Style>
+    <Style x:Key="LoginPWD" TargetType="{x:Type PasswordBox}">
+        <Setter Property="FontSize" Value="7.5"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="TextBlock.LineHeight" Value="1.33"/>
+        <Setter Property="Foreground" Value="#000100"/>
+    </Style>
+    <Style x:Key="LoginRememberMeChk" TargetType="{x:Type CheckBox}">
+        <Setter Property="FontSize" Value="7.5"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="#000100"/>
+    </Style>
+    <Style x:Key="LoginBtn" TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="7.5"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#ffffff"/>
+        <Setter Property="Background" Value="#06a9e0"/>
+    </Style>
+    <Style x:Key="LoginForgotPwdLabel" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="7.5"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="Foreground" Value="#0078d7"/>
+    </Style>
+    <Style x:Key="LoginForgotPwdTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="7.5"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="Foreground" Value="#0078d7"/>
+    </Style>
+    <Style x:Key="LoginGuest" TargetType="{x:Type Button}">
+        <Setter Property="FontSize" Value="7.5"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#0aa8df"/>
+        <Setter Property="Background" Value="#ffffff"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#0aa8df"/>
+    </Style>
+    <Style x:Key="LoginAccnt" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value="#7a7a7a"/>
+    </Style>
+    <Style x:Key="LoginSignUp" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontStretch" Value="Normal"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="Foreground" Value=" #0078d7"/>
+    </Style>
+    <Style x:Key="LoginSignUpTextBlock" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="FontStyle" Value="Normal"/>
+        <Setter Property="FontStretch" Value="Normal"/>        
+        <Setter Property="Foreground" Value=" #0078d7"/>
+    </Style>
+</ResourceDictionary>

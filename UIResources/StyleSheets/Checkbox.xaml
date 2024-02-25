@@ -1,0 +1,59 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:VLEXClient">
+
+	<Style TargetType="CheckBox" x:Key="WhiteCheckMark">
+		<Setter Property="SnapsToDevicePixels" Value="true"/>
+		<Setter Property="OverridesDefaultStyle" Value="true"/>
+		<Setter Property="Foreground" Value="#000100"/>
+		<Setter Property="Background" Value="#3f3f3f"/>
+		<Setter Property="FontSize" Value="15"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="CheckBox">
+					<BulletDecorator Background="Transparent">
+						<BulletDecorator.Bullet>
+							<Border x:Name="Border" IsHitTestVisible="False"
+                              Width="16" 
+                              Height="16" 
+                              CornerRadius="0" 
+                              Background="#06a9e0"
+                              BorderBrush="#06a9e0"
+                              BorderThickness="1">
+								<Path 
+                                                    Width="13" Height="13" 
+                                                    x:Name="CheckMark"
+                                                    SnapsToDevicePixels="False" 
+                                                    Stroke="White"
+                                                    StrokeThickness="1.5"
+                                                    Data="M 0 6 L 4 9.5 12 2" />
+							</Border>
+						</BulletDecorator.Bullet>
+						<ContentPresenter Margin="8,0,0,0" 
+                            VerticalAlignment="Top"
+                            HorizontalAlignment="Left"
+                            RecognizesAccessKey="True"/>
+					</BulletDecorator>
+					<ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="CheckMark" Property="Stroke" Value="White" />
+                            <Setter TargetName="Border" Property="Background" Value="#0fbef5"/>
+                        </Trigger>
+						<Trigger Property="IsChecked" Value="false">
+							<Setter TargetName="CheckMark" Property="Visibility" Value="Collapsed"/>
+							<Setter TargetName="Border" Property="Background" Value="White" />
+							<Setter TargetName="Border" Property="BorderBrush" Value="#888a8d" />
+						</Trigger>
+						<Trigger Property="IsChecked" Value="{x:Null}">
+							<Setter TargetName="CheckMark" Property="Data" Value="M 0 7 L 7 0" />
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="true">
+							<Setter TargetName="Border" Property="BorderBrush" Value="#06a9e0" />
+						</Trigger>                        
+                    </ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+</ResourceDictionary>

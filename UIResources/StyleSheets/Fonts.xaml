@@ -1,0 +1,38 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:VLEXClient">
+  <!--  <FontFamily x:Key="Effra">pack://application;,,,/Fonts/#Effra Medium</FontFamily>-->
+    <Style x:Key="Effra">
+<!---EffraRegular and Effra-->
+        <Setter Property="TextBlock.FontFamily"
+
+                Value="pack://application:,,,/UIResources;component/Fonts/#Effra" />
+        
+        <Setter Property="Control.FontFamily"
+                Value="pack://application:,,,/UIResources;component/Fonts/#Effra" />
+    </Style>
+    <Style x:Key="Effra-Regular">
+
+        <Setter Property="TextBlock.FontFamily"
+
+                Value="pack://application:,,,/UIResources;component/Fonts/#Effra" />
+        <Setter Property="Control.FontFamily"
+                Value="pack://application:,,,/UIResources;component/Fonts/#Effra" />
+    </Style>
+    <Style x:Key="Effra-Medium">
+
+        <Setter Property="TextBlock.FontFamily"
+
+                Value="pack://application:,,,/UIResources;component/Fonts/#Effra Medium" />
+        <Setter Property="Control.FontFamily"
+                Value="pack://application:,,,/UIResources;component/Fonts/#Effra Medium" />
+    </Style>
+    <Style x:Key="Effra-Bold">
+
+        <Setter Property="TextBlock.FontFamily"
+
+                Value="pack://application:,,,/UIResources;component/Fonts/#Effra Bold" />
+        <Setter Property="Control.FontFamily"
+                Value="pack://application:,,,/UIResources;component/Fonts/#Effra Bold" />
+    </Style>
+</ResourceDictionary>

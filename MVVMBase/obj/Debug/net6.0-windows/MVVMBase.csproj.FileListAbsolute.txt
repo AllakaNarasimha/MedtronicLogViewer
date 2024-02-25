@@ -1,0 +1,11 @@
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\bin\Debug\net6.0-windows\MVVMBase.deps.json
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\bin\Debug\net6.0-windows\MVVMBase.dll
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\bin\Debug\net6.0-windows\MVVMBase.pdb
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\obj\Debug\net6.0-windows\MVVMBase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\obj\Debug\net6.0-windows\MVVMBase.AssemblyInfoInputs.cache
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\obj\Debug\net6.0-windows\MVVMBase.AssemblyInfo.cs
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\obj\Debug\net6.0-windows\MVVMBase.csproj.CoreCompileInputs.cache
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\obj\Debug\net6.0-windows\MVVMBase.dll
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\obj\Debug\net6.0-windows\refint\MVVMBase.dll
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\obj\Debug\net6.0-windows\MVVMBase.pdb
+C:\Workspace\Github\WPF\MedtronicLogViewer\MVVMBase\obj\Debug\net6.0-windows\ref\MVVMBase.dll

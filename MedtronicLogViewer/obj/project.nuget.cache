@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "xNBFsbOozqqG64m5m5OU6gz+aKsR/6juN/JpkSY2QJTyJr8SBPk0OAYssttYqgrDYd2KoT1j5/Ig3dBMzXSIfg==",
+  "success": true,
+  "projectFilePath": "C:\\Workspace\\Github\\WPF\\MedtronicLogViewer\\MedtronicLogViewer\\MedtronicLogViewer.csproj",
+  "expectedPackageFiles": [
+    "C:\\CI\\NugetPackageCache\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\csvhelper\\31.0.0\\csvhelper.31.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\mahapps.metro\\2.4.10\\mahapps.metro.2.4.10.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\system.linq.async\\4.0.0\\system.linq.async.4.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
+  ],
+  "logs": []
+}

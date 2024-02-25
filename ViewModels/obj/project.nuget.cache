@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "jZv4Hwl//GtMoa0NNzYe52A0xnwHS2YGbIvD811Y9D4zCL/qO2t2hGwVNwcZSTXiozOcKLrRSMO1w2T4j8j1zA==",
+  "success": true,
+  "projectFilePath": "C:\\Workspace\\Github\\WPF\\MedtronicLogViewer\\ViewModels\\ViewModels.csproj",
+  "expectedPackageFiles": [
+    "C:\\CI\\NugetPackageCache\\csvhelper\\31.0.0\\csvhelper.31.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\system.linq.async\\4.0.0\\system.linq.async.4.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,507 @@
+﻿<Window x:Class="MedtronicLogViewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:MedtronicLogViewer" 
+        xmlns:vm="clr-namespace:ViewModels;assembly=ViewModels"
+        xmlns:converts="clr-namespace:MVVMBase.Converters;assembly=MVVMBase"
+        xmlns:scale="clr-namespace:ScaleIndicator;assembly=ScaleIndicator"
+
+        x:Name="logWindow"
+        mc:Ignorable="d" Height="640" Width="1200" MinWidth="1200" WindowState="Maximized" Style="{DynamicResource Effra}" WindowStartupLocation="CenterScreen" 
+        Title="Medtronic Log Viewer" >
+    <Window.DataContext>
+        <vm:LogViewModel/>
+    </Window.DataContext>
+    <Window.Icon>
+        <BitmapImage  UriSource="pack://application:,,,/UIResources;component/Images/ClientImages/CovRDMVLEXIcon.ico" />
+    </Window.Icon>
+    <Window.Resources>
+        <converts:UniversalValueConverter x:Key="universalValueConverter" />
+        <converts:InverseBoolConverter x:Key="inverseBoolConverter" />
+        <converts:AutoWidthConverter x:Key="autoWidthConverter" />
+        <converts:ThicknessConverter x:Key="positionConverter" />
+        <converts:DoubleToThicknessConverter x:Key="DoubleToThicknessConverter" />
+        <converts:IncrementConverter x:Key="incrementConverter" />
+
+
+        <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
+        <SolidColorBrush x:Key="StandardBackgroundBrush" Color="#FFF" />
+        <SolidColorBrush x:Key="HoverBorderBrush" Color="#DDD" />
+        <SolidColorBrush x:Key="SelectedBackgroundBrush" Color="Gray" />
+        <SolidColorBrush x:Key="SelectedForegroundBrush" Color="White" />
+        <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+        <SolidColorBrush x:Key="NormalBrush" Color="#888" />
+        <SolidColorBrush x:Key="NormalBorderBrush" Color="#888" />
+        <SolidColorBrush x:Key="HorizontalNormalBrush" Color="#888" />
+        <SolidColorBrush x:Key="HorizontalNormalBorderBrush" Color="#888" />
+
+        <LinearGradientBrush x:Key="ListBoxBackgroundBrush" 
+                     StartPoint="0,0" EndPoint="1,0.001">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="White" Offset="0.0" />
+                    <GradientStop Color="White" Offset="0.6" />
+                    <GradientStop Color="#DDDDDD" Offset="1.2"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <LinearGradientBrush x:Key="StandardBrush" 
+                     StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#FFF" Offset="0.0"/>
+                    <GradientStop Color="#CCC" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="GlyphBrush" Color="#444" />
+        <LinearGradientBrush x:Key="PressedBrush" 
+                     StartPoint="0,0" EndPoint="0,1">
+            <GradientBrush.GradientStops>
+                <GradientStopCollection>
+                    <GradientStop Color="#BBB" Offset="0.0"/>
+                    <GradientStop Color="#EEE" Offset="0.1"/>
+                    <GradientStop Color="#EEE" Offset="0.9"/>
+                    <GradientStop Color="#FFF" Offset="1.0"/>
+                </GradientStopCollection>
+            </GradientBrush.GradientStops>
+        </LinearGradientBrush>
+
+        <!-- SrollViewer ScrollBar Repeat Buttons (at each end) -->
+        <Style x:Key="ScrollBarLineButton" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border 
+                    Name="Border"
+                    Margin="1" 
+                    CornerRadius="2" 
+                    Background="{StaticResource NormalBrush}"
+                    BorderBrush="{StaticResource NormalBorderBrush}"
+                    BorderThickness="1">
+                            <Path 
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Fill="{StaticResource GlyphBrush}"
+                        Data="{Binding Path=Content,
+                        RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter TargetName="Border" Property="Background" 
+                                Value="{StaticResource PressedBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" 
+                                Value="{StaticResource DisabledForegroundBrush}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- SrollViewer ScrollBar Repeat Buttons (The part in the middle, 
+   not the thumb the long area between the buttons ) -->
+        <Style x:Key="ScrollBarPageButton" TargetType="{x:Type RepeatButton}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type RepeatButton}">
+                        <Border Background="Transparent" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- ScrollViewer ScrollBar Thumb, that part that can be dragged
+  up/down or left/right Buttons -->
+        <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Focusable" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border 
+                    CornerRadius="2" 
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="1" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <ControlTemplate x:Key="VerticalScrollBar" 
+                 TargetType="{x:Type ScrollBar}">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="18"/>
+                    <RowDefinition Height="0.00001*"/>
+                    <RowDefinition MaxHeight="18"/>
+                </Grid.RowDefinitions>
+                <Border
+            Grid.RowSpan="3"
+            CornerRadius="2" 
+            Background="#F0F0F0" />
+                <RepeatButton 
+            Grid.Row="0"                           
+            Style="{StaticResource ScrollBarLineButton}"
+            Height="18"
+            Command="ScrollBar.LineUpCommand"
+            Content="M 0 4 L 8 4 L 4 0 Z" />
+                <Track 
+            Name="PART_Track"
+            Grid.Row="1"
+            IsDirectionReversed="true">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton 
+                    Style="{StaticResource ScrollBarPageButton}"
+                    Command="ScrollBar.PageUpCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb 
+                    Style="{StaticResource ScrollBarThumb}" 
+                    Margin="1,0,1,0"  
+                    Background="{StaticResource HorizontalNormalBrush}"
+                    BorderBrush="{StaticResource HorizontalNormalBorderBrush}" />
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton 
+                    Style="{StaticResource ScrollBarPageButton}"
+                    Command="ScrollBar.PageDownCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton 
+            Grid.Row="3" 
+            Style="{StaticResource ScrollBarLineButton}"
+            Height="18"
+            Command="ScrollBar.LineDownCommand"
+            Content="M 0 0 L 4 4 L 8 0 Z"/>
+            </Grid>
+        </ControlTemplate>
+        <!-- HorizontalScrollBar Template using the previously created Templates -->
+
+        <ControlTemplate x:Key="HorizontalScrollBar" 
+                 TargetType="{x:Type ScrollBar}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MaxWidth="18"/>
+                    <ColumnDefinition Width="0.00001*"/>
+                    <ColumnDefinition MaxWidth="18"/>
+                </Grid.ColumnDefinitions>
+                <Border
+            Grid.ColumnSpan="3"
+            CornerRadius="2" 
+            Background="#F0F0F0" />
+                <RepeatButton 
+            Grid.Column="0"                           
+            Style="{StaticResource ScrollBarLineButton}"
+            Width="18"
+            Command="ScrollBar.LineLeftCommand"
+            Content="M 4 0 L 4 8 L 0 4 Z" />
+                <Track 
+            Name="PART_Track"
+            Grid.Column="1"
+            IsDirectionReversed="False">
+                    <Track.DecreaseRepeatButton>
+                        <RepeatButton 
+                    Style="{StaticResource ScrollBarPageButton}"
+                    Command="ScrollBar.PageLeftCommand" />
+                    </Track.DecreaseRepeatButton>
+                    <Track.Thumb>
+                        <Thumb Style="{StaticResource ScrollBarThumb}" 
+                       Margin="0,1,0,1"  
+                       Background="{StaticResource NormalBrush}"
+                       BorderBrush="{StaticResource NormalBorderBrush}" />
+                    </Track.Thumb>
+                    <Track.IncreaseRepeatButton>
+                        <RepeatButton 
+                    Style="{StaticResource ScrollBarPageButton}"
+                    Command="ScrollBar.PageRightCommand" />
+                    </Track.IncreaseRepeatButton>
+                </Track>
+                <RepeatButton 
+            Grid.Column="3" 
+            Style="{StaticResource ScrollBarLineButton}"
+            Width="18"
+            Command="ScrollBar.LineRightCommand"
+            Content="M 0 0 L 4 4 L 0 8 Z"/>
+            </Grid>
+        </ControlTemplate>
+        <!-- Style for overall  ScrollBar -->
+        <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="Height" Value="18" />
+                    <Setter Property="Template" 
+		Value="{StaticResource HorizontalScrollBar}" />
+                </Trigger>
+                <Trigger Property="Orientation" Value="Vertical">
+                    <Setter Property="Width" Value="18"/>
+                    <Setter Property="Height" Value="Auto" />
+                    <Setter Property="Template" 
+		Value="{StaticResource VerticalScrollBar}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- Style for overall  ScrollViewer x:Key="FavsScrollViewer" -->
+        <Style  TargetType="{x:Type ScrollViewer}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ScrollContentPresenter Grid.Column="1"/>
+
+                            <ScrollBar Name="PART_VerticalScrollBar"
+                               Value="{TemplateBinding VerticalOffset}"
+                               Maximum="{TemplateBinding ScrollableHeight}"
+                               ViewportSize="{TemplateBinding ViewportHeight}"
+                               Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                            <ScrollBar Name="PART_HorizontalScrollBar"
+                               Orientation="Horizontal"
+                               Grid.Row="1"
+                               Grid.Column="1"
+                               Value="{TemplateBinding HorizontalOffset}"
+                               Maximum="{TemplateBinding ScrollableWidth}"
+                               ViewportSize="{TemplateBinding ViewportWidth}"
+                               Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>       
+        <Grid.Resources>
+            <Style x:Key="chkApp" TargetType="CheckBox">
+                <Style.Triggers>
+                    <MultiDataTrigger>
+                        <MultiDataTrigger.Conditions>
+                            <Condition Binding="{Binding ElementName=FT10, Path=IsChecked}" Value="True"/>
+                        </MultiDataTrigger.Conditions>
+                        <Setter Property="Tag" Value="FT10"/>
+                        <Setter Property="DataContext" Value="{Binding Path=AppName, UpdateSourceTrigger=PropertyChanged}"/>
+                    </MultiDataTrigger>
+
+                    <DataTrigger Binding="{Binding ElementName=FX8, Path=IsChecked}" Value="True">
+                        <Setter Property="Tag" Value="FT8"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+        <StackPanel>
+            <StackPanel.Style>
+                <Style TargetType="StackPanel">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ShowProgress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Value="True">
+                            <Setter Property="Background" Value="#0285c8"/>
+                            <Setter Property="Opacity" Value="0.2"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ShowProgress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Value="False">
+                            <Setter Property="Background" Value="Transparent"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" >
+                <StackPanel Orientation="Horizontal" Background="WhiteSmoke">
+                    <CheckBox x:Name="FT10" Margin="10,0,0,0"
+                          VerticalAlignment="Center" HorizontalAlignment="Center"
+                          HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                          Content="FT-10" FontSize="20" Height="20" IsChecked="{Binding FT10Checked}"
+                          />
+                    <CheckBox x:Name="FX8" Margin="10,0,10,0"  
+                          VerticalAlignment="Center" HorizontalAlignment="Center"
+                          HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                          Content="FX-8"  FontSize="20" Height="20"  IsChecked="{Binding FX8Checked}" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" IsEnabled="{Binding IsEnableSearchLog}" >
+                    <Label   HorizontalAlignment="Left" VerticalAlignment="Center" MinWidth="100" >
+                        <TextBlock Text="Data Source:" FontSize="20" HorizontalAlignment="Center" MinWidth="140" VerticalAlignment="Center" TextWrapping="Wrap"/>
+                    </Label>
+                    <TextBox MinWidth="500" MaxWidth="400" x:Name="tbSearchPath" Text="{Binding Path=LogPath, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" VerticalContentAlignment="Stretch" TextWrapping="Wrap" >
+                        <TextBox.InputBindings>
+                            <MouseBinding Gesture="LeftClick" Command="{Binding SearchLogCommand}" />
+                        </TextBox.InputBindings>
+                    </TextBox>
+                    <Button Name="btnAnalyse" Background="White" Foreground="Black" Margin="10,0,0,0" FontWeight="Bold"  Grid.ColumnSpan="1" Content="Analyze" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                            Command="{Binding AnalyzeLogCommand}" Padding="3" />
+                </StackPanel>
+            </StackPanel>
+            <Grid>
+                <StackPanel>
+                    <StackPanel  >
+                        <Label>
+                            <TextBlock Name="TimeLineText" Text="TimeLine" VerticalAlignment="Center" HorizontalAlignment="Right" Width="Auto" FontSize="20" FontWeight="Bold" TextWrapping="Wrap" />
+                        </Label>
+                        <StackPanel Orientation="Horizontal"
+                                    >
+                            <TextBox Name="LeftTime" Margin="2,0" Text="{Binding StartTime}" IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20" TextWrapping="Wrap" />
+                            <StackPanel>
+                                <Canvas >
+                                    <Canvas.Margin>
+                                        <MultiBinding Converter="{StaticResource positionConverter}" UpdateSourceTrigger="PropertyChanged" >
+                                            <Binding ElementName="TimeLineGrid" Path="ColumnWidth" UpdateSourceTrigger="PropertyChanged"/>
+                                            <Binding Path="TimeLineIndex"   />
+                                            <Binding Source="-10"/>
+                                            <Binding Source="0"/>
+                                            <Binding Source="0"/>
+                                            <Binding ElementName="TimeLineGrid" Path="ColumnDefinitions"/>
+                                        </MultiBinding>
+                                    </Canvas.Margin>
+                                    <Polygon  Points="0,0 10,0 5,10" Width="{Binding ElementName=TimeLineGrid, Path=ColumnWidth, UpdateSourceTrigger=PropertyChanged}" Fill="Green" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                                    <!-- Arrow below the triangle -->
+                                    <Path Data="M0,0 L5,10 L10,0 Z" Visibility="Collapsed" Fill="Blue" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0"/>
+                                    <TextBlock Margin="0,-10,0,0" Text="{Binding TimeLineIndex, Converter={StaticResource incrementConverter}, ConverterParameter=1, StringFormat={}{0}%}"
+                                       FontSize="8" FontWeight="Bold" Foreground="DarkGreen" />
+                                </Canvas>
+                                <scale:TimeLineControl Name="TimeLineGrid" Visibility="Visible"
+                                                       ScrollViewer.CanContentScroll="True"
+                                                       
+                                                       Height="{Binding ElementName=LeftTime, Path=ActualHeight}" 
+                                                       GridBackgroundColor="LightGray"
+                                                       DefautlTimeLineColor="AliceBlue"
+                                                       Data="{Binding EventLogCollection}"
+                                                       UpdateScaleMethod="{Binding UpdateScaleMethod}"                                                       
+                                                       Margin="10,0,10,0" >
+                                    <scale:TimeLineControl.ColumnWidth>
+                                        <MultiBinding Converter="{StaticResource autoWidthConverter}" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay">
+                                            <Binding ElementName="logWindow" Path="ActualWidth" UpdateSourceTrigger="PropertyChanged" />
+                                            <Binding ElementName="LeftTime" Path="ActualWidth" UpdateSourceTrigger="PropertyChanged"/>
+                                            <Binding ElementName="RightTime" Path="ActualWidth" UpdateSourceTrigger="PropertyChanged"/>
+                                        </MultiBinding>
+                                    </scale:TimeLineControl.ColumnWidth>
+                                </scale:TimeLineControl>
+                            </StackPanel>
+                            <TextBox Name="RightTime" Text="{Binding EndTime}" IsReadOnly="True" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20" TextWrapping="Wrap" />
+                        </StackPanel>
+                        <TextBlock Name="tbEachPercent" Margin="{Binding ElementName=LeftTime, Path=ActualWidth, Converter={StaticResource DoubleToThicknessConverter}, ConverterParameter=15.0}"  Text="{Binding PercentText, UpdateSourceTrigger=PropertyChanged}" Width="1000"/>
+                    </StackPanel>
+                    <TabControl SelectedIndex="{Binding SelectedTabIndex}">
+                        <TabItem x:Name="Tab1" Header="Error" FontSize="20"  Height="40" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" >
+                            <StackPanel>
+                                <StackPanel.Width>
+                                    <MultiBinding Converter="{StaticResource autoWidthConverter}">
+                                        <Binding ElementName="logWindow" Path="ActualWidth"/>
+                                    </MultiBinding>
+                                </StackPanel.Width>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox x:Name="HighCheckBox"  Content="High" Height="40" Margin="30,7,5,5" Width="auto" MinWidth="30" HorizontalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" 
+                                          IsChecked="{Binding IsHigh}" />
+                                        <TextBox  MinWidth="30" 
+                                          VerticalAlignment="Center" HorizontalAlignment="Left"
+                                          HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                          Foreground="Red" FontWeight="Bold" FontSize="18" 
+                                          Text="{Binding HighCount}"
+                                           />
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox x:Name="MediumCheckBox"  Content="Med" Height="40" Margin="30,7,5,5" Width="auto" MinWidth="50" HorizontalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" 
+                                          IsChecked="{Binding IsMedium}" />
+                                        <TextBox  MinWidth="30"  
+                                          VerticalAlignment="Center" HorizontalAlignment="Left"
+                                          HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                          Foreground="Orange" 
+                                          FontWeight="Bold" FontSize="18" 
+                                          Text="{Binding MediumCount}"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal">
+                                        <CheckBox x:Name="LowCheckBox"  Content="Low" Height="40" Margin="30,7,5,5" Width="auto" MinWidth="50" HorizontalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" 
+                                          IsChecked="{Binding IsLow}"/>
+                                        <TextBox  MinWidth="30" 
+                                          VerticalAlignment="Center" HorizontalAlignment="Left"
+                                          HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                                          Foreground="Gold" 
+                                          FontWeight="Bold" FontSize="18"
+                                          Text="{Binding LowCount}"/>
+                                    </StackPanel>
+                                    <Button x:Name="Clear" Margin="20,5,0,5" HorizontalAlignment="Right" Padding="3" Content="Clear All" FontSize="20" FontWeight="Bold" Background="white" 
+                                    Command="{Binding ClearLogCommand}"  />
+
+                                </StackPanel>
+
+                                <DataGrid  x:Name="DG1" MaxWidth="3000" ItemsSource="{Binding ErrorLogCollection}"
+                                           HorizontalScrollBarVisibility="Auto" 
+                                   scale:DataGridBehavior.ScrollSelectedItemIntoView="True">
+                                    <DataGrid.Width>
+                                        <MultiBinding Converter="{StaticResource autoWidthConverter}">
+                                            <Binding ElementName="logWindow" Path="ActualWidth"/>
+                                        </MultiBinding>
+                                    </DataGrid.Width>
+                                    <DataGrid.Height>
+                                        <MultiBinding Converter="{StaticResource autoWidthConverter}" ConverterParameter="280.0">
+                                            <Binding ElementName="logWindow" Path="ActualHeight"/>
+                                        </MultiBinding>
+                                    </DataGrid.Height>
+                                </DataGrid>
+                            </StackPanel>
+                        </TabItem>
+
+                        <TabItem x:Name="Tab2" Header="Events" FontSize="20" Height="40" >
+                            <DataGrid x:Name="DG2" MaxHeight="3000" ItemsSource="{Binding EventLogCollection}"
+                                      HorizontalScrollBarVisibility="Auto"
+                                      SelectedIndex="{Binding GridSelectedIndex, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                      SelectedItem="{Binding SelectedLog, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                              scale:DataGridBehavior.ScrollSelectedItemIntoView="True"
+                              >
+                                <!--<DataGrid.Resources>
+                            <Style TargetType="ScrollBar">
+                                <Setter Property="Background" Value="Gray" />
+                            </Style>
+                        </DataGrid.Resources>-->
+                                <DataGrid.Width>
+                                    <MultiBinding Converter="{StaticResource autoWidthConverter}" ConverterParameter="10">
+                                        <Binding ElementName="logWindow" Path="ActualWidth"/>
+                                    </MultiBinding>
+                                </DataGrid.Width>
+                                <DataGrid.Height>
+                                    <MultiBinding Converter="{StaticResource autoWidthConverter}" ConverterParameter="220.0">
+                                        <Binding ElementName="logWindow" Path="ActualHeight"/>
+                                    </MultiBinding>
+                                </DataGrid.Height>
+                            </DataGrid>
+                        </TabItem>
+
+                    </TabControl>
+                </StackPanel>
+
+                <!--<ProgressBar Visibility="Visible"
+                                        HorizontalContentAlignment="Center" 
+                                        IsIndeterminate="True" Height="10" 
+                                        Width="1000"  />-->
+            </Grid>
+        </StackPanel>
+        <metro:MetroProgressBar Visibility="{Binding ShowProgress, Converter={StaticResource inverseBoolConverter}, UpdateSourceTrigger=PropertyChanged}"
+                         HorizontalContentAlignment="Center" 
+                         IsIndeterminate="True" Height="10" 
+                         Width="{Binding ElementName=TimeLineGrid, Path=ActualWidth, UpdateSourceTrigger=PropertyChanged}"  />
+
+    </Grid>
+</Window>

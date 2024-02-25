@@ -1,0 +1,94 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    >
+
+    <Style TargetType="ToolTip" x:Key="ToolTipForLabel">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="HasDropShadow" Value="False"/>
+        <Setter Property="Placement" Value="Bottom"/>
+        <Setter Property="DataContext" Value="{Binding Path=PlacementTarget, RelativeSource={x:Static RelativeSource.Self}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <Path Fill="#343434" Data="M 0 0 L 6 6 L 12 0 Z" Height="11.201" Stretch="Fill" Margin="0,25,-2.5,10.984" RenderTransformOrigin="0.33,7.026" Width="26.008">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="180" />
+                                    <TranslateTransform X="50" Y="-183"/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Border x:Name="border" CornerRadius="3" HorizontalAlignment="Center" Padding="5,5" BorderThickness="0" Background="#343434" Width="Auto" Height="50" VerticalAlignment="Top">
+                            <Grid >
+                                <Grid Margin="5,5,5,5" >
+                                    <TextBlock  FontSize="12" LineHeight="16" TextWrapping="Wrap" Foreground="White" RenderTransformOrigin="0.5,0.5" Text="{Binding Content}" Width="Auto"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ToolTip" x:Key="ToolTipForTextBox">
+        <!-- override the existing style-->
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="HasDropShadow" Value="False"/>
+        <!-- To place the tooltip at bottom-->
+        <Setter Property="Placement" Value="Bottom"/>
+        <Setter Property="HorizontalOffset" Value="20"/>
+        <!-- To point to the mouse overing property data. This is required to display the content of the control in tooltip-->
+        <Setter Property="DataContext" Value="{Binding Path=PlacementTarget, RelativeSource={x:Static RelativeSource.Self}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <!-- Arrow shape of the tooltip-->
+                        <Path Fill="#343434" Data="M 0 0 L 6 6 L 12 0 Z" Height="11.201" Stretch="Fill" Margin="0,25,-2.5,10.984" RenderTransformOrigin="0.33,7.026" Width="26.008">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <RotateTransform Angle="180" />
+                                    <TranslateTransform X="50" Y="-183"/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+                        <Border x:Name="border" CornerRadius="3" HorizontalAlignment="Center" Padding="5,5" BorderThickness="0" Background="#343434" Width="Auto" Height="50" VerticalAlignment="Top">
+                            <Grid >
+                                <Grid Margin="5,5,5,5" >
+                                    <!--Binded "Text" in Text="{Binding Text}" need to be change based which control the mouse is pointing to.-->
+                                    <TextBlock  FontSize="12" LineHeight="16" TextWrapping="Wrap" Foreground="White" RenderTransformOrigin="0.5,0.5" Text="{Binding Text}" Width="Auto"/>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </StackPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="ToolTip" x:Key="ToolTipForButton">
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="HasDropShadow" Value="False" />
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#343434"/>
+        <Setter Property="Placement" Value="Center" />
+        <Setter Property="VerticalOffset" Value="20"/>
+        <Setter Property="HorizontalOffset" Value="-30"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontFamily" Value="Effra-Regular"/>
+        <Setter Property="Width" Value="Auto"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="MinWidth" Value="60"/>
+        <Setter Property="MinHeight" Value="30"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToolTip">
+                    <Border Name="Border" Background="#343434" BorderBrush="#343434" CornerRadius="3" SnapsToDevicePixels="False" BorderThickness="1">
+                        <ContentPresenter Margin="5,5,5,5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
