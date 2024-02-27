@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "OClYxt77K7XT3nbH64NNmxNfyVs0Fr1ORFuoLDSGLg9lkww4ute2K+tCYON8K0G24fVk+tl3wMyDnBdqV01ajw==",
+  "dgSpecHash": "4HfjARN1UUBYzz9vB0NpxEnsTB069+ayTbCyTPiJGG7ksCAKjxBnRSVtZO5dltYUMBuGg0oESLfWX1U+CT87Xw==",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\Github\\WPF\\MedtronicLogViewer\\BusinessLayer\\BusinessLayer.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\BusinessLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\CI\\NugetPackageCache\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

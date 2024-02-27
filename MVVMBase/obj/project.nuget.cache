@@ -1,8 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "2f/zJiYMNhOeDtcjEc7gnnbdtZiqAzEN8OntnAgQDn6+9hCFA92lnxfNFBOhPF7Sgnh3vnyOEBhlS0Mm4dIASQ==",
+  "dgSpecHash": "0QrtuDkq5Vh9RUQ/0xtEhe2ZpHaGVN29z+RZbDdrVjvmD9m358iM8ql55a88wx46rl577ElbeO12r/LDgfVo5A==",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\Github\\WPF\\MedtronicLogViewer\\MVVMBase\\MVVMBase.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Workspace\\Github\\MedtronicLogViewer\\MVVMBase\\MVVMBase.csproj",
+  "expectedPackageFiles": [
+    "C:\\CI\\NugetPackageCache\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

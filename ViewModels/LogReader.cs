@@ -8,9 +8,9 @@ namespace BusinessLayer
 {
     public class LogReader<T>
     {
-        public static RangeObservableCollection<T> ReadLogFile(string filePath)
+        public static List<T> ReadLogFile(string filePath)
         {
-            var logs = new RangeObservableCollection<T>();
+            var logs = new List<T>();
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HasHeaderRecord = true,
@@ -26,6 +26,6 @@ namespace BusinessLayer
 
             }
             return logs;
-        }
+        }        
     }
 }

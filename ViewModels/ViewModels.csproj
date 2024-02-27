@@ -21,4 +21,10 @@
     <ProjectReference Include="..\ScaleIndicator\ScaleIndicator.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\..\..\..\CI\NugetPackageCache\automapper\13.0.1\lib\net6.0\AutoMapper.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

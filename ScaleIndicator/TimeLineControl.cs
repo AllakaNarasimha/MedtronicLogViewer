@@ -253,24 +253,24 @@ namespace ScaleIndicator
             }
         }
 
-        public void UpdateScaleColorAt(System.Windows.Media.Color color, int startIndex, int count, int listIndex)
+        public void UpdateScaleColorAt(System.Windows.Media.Color color, int startPercentage, int columnSpan, int referListIndex, int startListIndex, int listWidthStep)
         {
-            if (startIndex <= 0)
+            //if (startPercentage <= 0)
             {
-                return;
+               // return;
             }
-            startIndex = (startIndex - 1);
+            //startPercentage = (startPercentage - 1);
             var transparent = color;
-            List<int> allNumbers = Enumerable.Range(startIndex, count).ToList();
+            List<int> allNumbers = Enumerable.Range(startPercentage, columnSpan).ToList();
             allNumbers.ForEach(number =>
             {
                 var rect = this.Children.OfType<System.Windows.Shapes.Rectangle>().FirstOrDefault(rect => Grid.GetColumn(rect) == number);
                 if (rect != null)
                 {
                     var indexes = (Indexes)rect.Tag;
-                    indexes.ListIndex = listIndex;
-                    indexes.StartIndex = startIndex;
-                    indexes.EndIndex = startIndex + count;
+                    indexes.ListIndex = referListIndex;
+                    indexes.StartListIndex = startListIndex;
+                    indexes.EndListIndex = startListIndex + listWidthStep;
                     rect.Fill = new SolidColorBrush(transparent);
                     rect.Stroke = new SolidColorBrush(System.Windows.Media.Color.FromArgb(100, color.A, color.G, color.B));
                 }
@@ -323,8 +323,8 @@ namespace ScaleIndicator
         public int Index { get; set; }
         public int ListIndex { get; set; }
 
-        public int StartIndex { get; set; }
-        public int EndIndex { get; set; }
+        public int StartListIndex { get; set; }
+        public int EndListIndex { get; set; }
     }
 
     public class DataChangedEventArgs<T> : EventArgs

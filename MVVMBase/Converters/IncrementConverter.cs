@@ -15,7 +15,7 @@ namespace MVVMBase.Converters
             if (value is int numericValue && parameter is int increment)
             {
                 // Increment the numeric value
-                return numericValue + increment;
+                return numericValue;// + increment;
             }
 
             if (value != null)

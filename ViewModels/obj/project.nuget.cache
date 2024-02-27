@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "jZv4Hwl//GtMoa0NNzYe52A0xnwHS2YGbIvD811Y9D4zCL/qO2t2hGwVNwcZSTXiozOcKLrRSMO1w2T4j8j1zA==",
+  "dgSpecHash": "q8mCV6uxWwR1DWXfqM4v7D5wkHGmegsKcclZd49MYWJkq4XVDx06GuWFgeWtr+A0XuG5noeBQ8WqFo960Nh7hg==",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\Github\\WPF\\MedtronicLogViewer\\ViewModels\\ViewModels.csproj",
+  "projectFilePath": "C:\\Workspace\\Github\\MedtronicLogViewer\\ViewModels\\ViewModels.csproj",
   "expectedPackageFiles": [
+    "C:\\CI\\NugetPackageCache\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\CI\\NugetPackageCache\\csvhelper\\31.0.0\\csvhelper.31.0.0.nupkg.sha512",
-    "C:\\CI\\NugetPackageCache\\system.linq.async\\4.0.0\\system.linq.async.4.0.0.nupkg.sha512"
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\system.linq.async\\4.0.0\\system.linq.async.4.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -5,3 +5,10 @@ C:\Workspace\Github\WPF\MedtronicLogViewer\UIResources\obj\Debug\UIResources.g.r
 C:\Workspace\Github\WPF\MedtronicLogViewer\UIResources\obj\Debug\UIResources.csproj.CoreCompileInputs.cache
 C:\Workspace\Github\WPF\MedtronicLogViewer\UIResources\obj\Debug\UIResources.dll
 C:\Workspace\Github\WPF\MedtronicLogViewer\UIResources\obj\Debug\UIResources.pdb
+C:\Workspace\Github\Build\Output\UIResources.dll
+C:\Workspace\Github\Build\Output\UIResources.pdb
+C:\Workspace\Github\MedtronicLogViewer\UIResources\obj\Debug\UIResources.csproj.AssemblyReference.cache
+C:\Workspace\Github\MedtronicLogViewer\UIResources\obj\Debug\UIResources.g.resources
+C:\Workspace\Github\MedtronicLogViewer\UIResources\obj\Debug\UIResources.csproj.CoreCompileInputs.cache
+C:\Workspace\Github\MedtronicLogViewer\UIResources\obj\Debug\UIResources.dll
+C:\Workspace\Github\MedtronicLogViewer\UIResources\obj\Debug\UIResources.pdb

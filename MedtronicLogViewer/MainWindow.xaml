@@ -25,7 +25,7 @@
         <converts:ThicknessConverter x:Key="positionConverter" />
         <converts:DoubleToThicknessConverter x:Key="DoubleToThicknessConverter" />
         <converts:IncrementConverter x:Key="incrementConverter" />
-
+        <converts:GridSpanValidator x:Key="gridSpanValidator"  />
 
         <SolidColorBrush x:Key="StandardBorderBrush" Color="#888" />
         <SolidColorBrush x:Key="StandardBackgroundBrush" Color="#FFF" />
@@ -465,17 +465,41 @@
                         </TabItem>
 
                         <TabItem x:Name="Tab2" Header="Events" FontSize="20" Height="40" >
-                            <DataGrid x:Name="DG2" MaxHeight="3000" ItemsSource="{Binding EventLogCollection}"
+                            <DataGrid x:Name="DG2" MaxHeight="3000" ItemsSource="{Binding EventLogCollection}"                                      
                                       HorizontalScrollBarVisibility="Auto"
                                       SelectedIndex="{Binding GridSelectedIndex, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                       SelectedItem="{Binding SelectedLog, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
-                              scale:DataGridBehavior.ScrollSelectedItemIntoView="True"
-                              >
-                                <!--<DataGrid.Resources>
-                            <Style TargetType="ScrollBar">
-                                <Setter Property="Background" Value="Gray" />
-                            </Style>
-                        </DataGrid.Resources>-->
+                              scale:DataGridBehavior.ScrollSelectedItemIntoView="True">
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="DataGridRow">
+                                        <Style.Triggers>
+                                            <!--<DataTrigger Binding="{Binding RowId, Converter={StaticResource gridSpanValidator}, UpdateSourceTrigger=PropertyChanged}" Value="True">
+                                                <Setter Property="Foreground" Value="Blue"/>
+                                            </DataTrigger>-->
+
+
+                                            <DataTrigger Binding="{Binding Path=RowId,
+                                                Converter={StaticResource gridSpanValidator}}" Value="True">
+                                                <Setter Property="Foreground" Value="Blue"/>
+                                            </DataTrigger>
+
+                                            <!--<DataTrigger Binding="{Binding RelativeSource={RelativeSource Self},
+                                                Converter={StaticResource gridSpanValidator},
+                                                ConverterParameter={Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}},
+                                                Path=DataContext.TimeLineIndex}}" Value="False">
+                                                <Setter Property="Foreground" Value="Blue"/>
+                                            </DataTrigger>-->
+                                            <!--<DataTrigger>
+                                                <DataTrigger.Binding>
+                                                    <MultiBinding Converter="{StaticResource gridSpanValidator}">
+                                                        <Binding RelativeSource="{RelativeSource Self}" />
+                                                        <Binding RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}" Path="DataContext.TimeLineIndex"/>
+                                                    </MultiBinding>
+                                                </DataTrigger.Binding>                                                                                              
+                                            </DataTrigger>-->
+                                        </Style.Triggers>                                                                             
+                                    </Style>
+                                </DataGrid.RowStyle>
                                 <DataGrid.Width>
                                     <MultiBinding Converter="{StaticResource autoWidthConverter}" ConverterParameter="10">
                                         <Binding ElementName="logWindow" Path="ActualWidth"/>
@@ -488,14 +512,8 @@
                                 </DataGrid.Height>
                             </DataGrid>
                         </TabItem>
-
                     </TabControl>
                 </StackPanel>
-
-                <!--<ProgressBar Visibility="Visible"
-                                        HorizontalContentAlignment="Center" 
-                                        IsIndeterminate="True" Height="10" 
-                                        Width="1000"  />-->
             </Grid>
         </StackPanel>
         <metro:MetroProgressBar Visibility="{Binding ShowProgress, Converter={StaticResource inverseBoolConverter}, UpdateSourceTrigger=PropertyChanged}"

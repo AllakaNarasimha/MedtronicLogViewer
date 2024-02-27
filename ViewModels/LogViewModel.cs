@@ -5,11 +5,12 @@ using Microsoft.Win32;
 using MVVMBase;
 using ScaleIndicator;
 using System.Windows.Input;
-using static System.Reflection.Metadata.BlobBuilder;
 using System.Windows.Media;
 using System.Text.RegularExpressions;
 using System.Windows.Threading;
 using System.Windows;
+using AutoMapper;
+using System.Collections.ObjectModel;
 
 namespace ViewModels
 {
@@ -28,7 +29,7 @@ namespace ViewModels
                 UpdateScale();
             });
         }
-        private DeviceLog selectedLog;
+        private DeviceLogViewModel selectedLog;
 
         private int gridSelectedIndex;
 
@@ -37,19 +38,31 @@ namespace ViewModels
             get { return gridSelectedIndex; }
             set
             {
-                gridSelectedIndex = value;
+                if (SelectedTabIndex != 1)
+                {
+                    SelectedTabIndex = 1;
+                    OnPropertyChanged();
+                    return;
+                }
+                gridSelectedIndex = value;                
                 if (selectedTabIndex == 1 && !isTimelineClicked)
                 {
-                    TimeLineIndex = Math.Min((gridSelectedIndex / widthStep) - 1, 99);
-                }
+                    var index = LocalCache.FindKeysByItemInRange(gridSelectedIndex).FirstOrDefault();
+                    if(index > 99)
+                    {
+                        index -= 2;
+                    }
+                    //TimeLineIndex = Math.Min(index, 99);                    
+                }               
                 OnPropertyChanged();
             }
         }
-        private int widthStep = 0;
-        private int onePercent = 0;
+        private int listWidthstep = 0;
+        private double onePercent = 0;
+        private int  columnSpan = 0;
         private bool isTimelineClicked = false;
 
-        public DeviceLog SelectedLog
+        public DeviceLogViewModel SelectedLog
         {
             get { return selectedLog; }
             set
@@ -61,7 +74,6 @@ namespace ViewModels
                 }
             }
         }
-
 
         private TimeLineControl timelineControl;
 
@@ -89,35 +101,35 @@ namespace ViewModels
                 return;
             }
            
-            onePercent = (int)(eventList.Count * 0.01);
-            widthStep = onePercent <= 0 ? 1 : onePercent;            
-            PercentText = $"One percent equals {widthStep} rows in total rows of {eventList.Count}";
-            int i = 0;
-            while (i < eventList.Count)
+            onePercent = (1.0 / eventList.Count) * 100.0;
+            listWidthstep = (int)( (1 / onePercent) <= 0 ? 1 : (1 / onePercent));
+            columnSpan = (int)Math.Max(onePercent, 1);
+            PercentText = $"One percent equals {listWidthstep} rows in total rows of {eventList.Count}";
+            int startListIndex = 0;
+            int rCount = onePercent <= 0 ? 1 : listWidthstep;
+            int startPercentage = 0;
+            int j = 1;
+            while (startListIndex < eventList.Count)
             {
-                int j = i <= 0 ? 1 : i;
-                var logIndex = onePercent <= 0 ? (i / widthStep) : j;
-                var listIndex = onePercent <= 0 ? (i / widthStep) : j;
+                var logIndex = onePercent <= 0 ? startPercentage : j;
+                var refListIndex = logIndex;
 
                 if (eventList[logIndex] != null)
                 {
-                    bool isdev = (eventList[logIndex].GetType() == typeof(DeviceLog));
-                    int rCount = onePercent <= 0 ? 1 : widthStep;
-                    var event_item = onePercent <= 0 ? eventList[logIndex] : GetLogType(j, rCount, out listIndex);
-                    int sPercent = onePercent <= 0 ? j : (i / widthStep);
-                    UpdateColor(event_item, sPercent, listIndex, rCount);
+                    bool isdev = (eventList[logIndex].GetType() == typeof(DeviceLogViewModel));                    
+                    var event_item = onePercent <= 0 ? eventList[logIndex] : GetLogType(j, rCount, out refListIndex);                    
+                    UpdateColor(event_item, startPercentage, columnSpan, startListIndex, listWidthstep, refListIndex);
+                    LocalCache.AddItem((startPercentage), startListIndex , (startListIndex  + listWidthstep));
                 }
-                int nextJ = (i + widthStep);
+
+                int nextJ = (startListIndex + listWidthstep);
                 if (onePercent > 0 && nextJ >= eventList.Count)
                 {
                     break;
                 }
-                i += widthStep;
-            }
-            if (100.00 / eventList.Count > 0)
-            {
-                int error = 100 - (100 / eventList.Count) + 1;
-                updateProgressColor(Colors.White, error, widthStep, 0);
+                startListIndex += listWidthstep;
+                j = startListIndex;
+                startPercentage++;
             }
             this.TimelineControl.OnClickedColor += ProgressColors_OnClickedolor;
         }
@@ -136,7 +148,7 @@ namespace ViewModels
                     isTimelineClicked = false;
                     return;
                 }
-                else if (e.Index.ListIndex == 0 && e.Index.StartIndex == 0)
+                else if (e.Index.ListIndex == 0 && e.Index.StartListIndex == 0)
                 {
                     int listIndex = (int)(TimeLineIndex * EventLogCollection.Count * 0.01);
                     SelectedLog = EventLogCollection[listIndex];
@@ -148,7 +160,7 @@ namespace ViewModels
             isTimelineClicked = false;
         }
 
-        private int getErrorId(DeviceLog event_item)
+        private int getErrorId(DeviceLogViewModel event_item)
         {
             if (event_item?.Detail?.ToUpper()?.Contains("ERROR ") == true)
             {
@@ -192,7 +204,7 @@ namespace ViewModels
             return -1;
         }
 
-        private void UpdateColor(DeviceLog event_item, int sPercent, int logIndex, int widthStep = 1)
+        private void UpdateColor(DeviceLogViewModel event_item, int startPercentage, int columnSpan, int startListIndex, int listWidthStep, int referListIndex = 1)
         {
             if (event_item != null && event_item.LogLevel.Equals("ERROR", StringComparison.OrdinalIgnoreCase))
             {
@@ -201,17 +213,22 @@ namespace ViewModels
                 int errorType = GetErrorType(errorIndex);
                 if (errorType > 0)
                 {
-                    Color color = errorType == 3 ? Colors.Red :
+                    System.Windows.Media.Color color = errorType == 3 ? Colors.Red :
                         errorType == 2 ? Colors.OrangeRed : Colors.MediumVioletRed;
-                    updateProgressColor(color, sPercent, widthStep, logIndex);
+                    updateProgressColor(color, startPercentage, columnSpan, referListIndex, startListIndex, listWidthStep);
                 }
             }
+            else
+            {
+                updateProgressColor(TimelineControl.GridBackgroundColor, startPercentage, columnSpan, referListIndex, startListIndex, listWidthStep);
+            }
         }
-        private DeviceLog GetLogType(int sindex, int rindex, out int logIndex)
+        private DeviceLogViewModel GetLogType(int startListIndex, int rindex, out int logIndex)
         {
-            logIndex = sindex;
+            logIndex = startListIndex;
             var nLogs = EventLogCollection.Select((log, index) => new { Log = log, Index = index });
-            var clogs = nLogs.Skip(sindex).Take(rindex);
+            var clogs = nLogs.Skip(logIndex).Take(rindex);
+            
 
             string[] logLevels = { "ERROR" };
 
@@ -229,19 +246,19 @@ namespace ViewModels
         }
 
 
-        /*private void UpdateColor_old(DeviceLog event_item, int sPercent, int logIndex, int widthStep = 1)
+        /*private void UpdateColor_old(DeviceLog event_item, int sPercent, int logIndex, int listWidthstep = 1)
         {
             if (event_item.LogLevel.Equals("ERROR", StringComparison.OrdinalIgnoreCase))
             {
-                updateProgressColor(Colors.Red, sPercent, widthStep, logIndex);
+                updateProgressColor(Colors.Red, sPercent, listWidthstep, logIndex);
             }
             else if (event_item.LogLevel.Equals("DEBUG", StringComparison.OrdinalIgnoreCase))
             {
-                updateProgressColor(Colors.MediumVioletRed, sPercent, widthStep, logIndex);
+                updateProgressColor(Colors.MediumVioletRed, sPercent, listWidthstep, logIndex);
             }
             else if (event_item.LogLevel.Equals("INFO", StringComparison.OrdinalIgnoreCase))
             {
-                updateProgressColor(Colors.LightPink, sPercent, widthStep, logIndex);
+                updateProgressColor(Colors.LightPink, sPercent, listWidthstep, logIndex);
             }
             else
             {
@@ -250,12 +267,12 @@ namespace ViewModels
         }*/
 
 
-        private void updateProgressColor(Color color, int s_index, int r_count, int listIndex)
+        private void updateProgressColor(System.Windows.Media.Color color, int startPercentage, int columnSpan, int referListIndex, int startListIndex, int listWidthStep)
         {
-            TimelineControl?.UpdateScaleColorAt(color, s_index, r_count, listIndex);
+            TimelineControl?.UpdateScaleColorAt(color, startPercentage, columnSpan, referListIndex, startListIndex, listWidthStep);
         }
 
-        private DeviceLog GetLogType_old(int sindex, int rindex, out int logIndex)
+        private DeviceLogViewModel GetLogType_old(int sindex, int rindex, out int logIndex)
         {
             logIndex = sindex;
             var nLogs = EventLogCollection.Select((log, index) => new { Log = log, Index = index });
@@ -292,8 +309,8 @@ namespace ViewModels
             }
         }
 
-        private RangeObservableCollection<DeviceLog> errorLogCollection ;
-        private RangeObservableCollection<DeviceLog> eventLogCollection;
+        private ObservableCollection<DeviceLogViewModel> errorLogCollection ;
+        private ObservableCollection<DeviceLogViewModel> eventLogCollection;
 
         private int selectedTabIndex;
 
@@ -307,7 +324,7 @@ namespace ViewModels
         }
 
 
-        public RangeObservableCollection<DeviceLog> ErrorLogCollection
+        public ObservableCollection<DeviceLogViewModel> ErrorLogCollection
         {
             get { return errorLogCollection; }
             set
@@ -316,7 +333,7 @@ namespace ViewModels
                 OnPropertyChanged();
             }
         }
-        public RangeObservableCollection<DeviceLog> EventLogCollection
+        public ObservableCollection<DeviceLogViewModel> EventLogCollection
         {
             get { return eventLogCollection; }
             set { eventLogCollection = value;
@@ -346,14 +363,33 @@ namespace ViewModels
         private void OnAnalyzeLog(object obj)
         {
             ShowProgress = true;
+            LocalCache.ClearCache();
+            EventLogCollection?.Clear();
+            ErrorLogCollection?.Clear();
 
-            Task.Delay(4000).ContinueWith(task =>
+            Task.Delay(2500).ContinueWith(task =>
             {
                 Application.Current.Dispatcher.BeginInvoke(delegate {
-                    EventLogCollection = LogReader<DeviceLog>.ReadLogFile(logPath);
+                    var logs = LogReader<DeviceLog>.ReadLogFile(logPath);
 
+                    var config = new MapperConfiguration(cfg =>
+                    {
+                        cfg.CreateMap<DeviceLog, DeviceLogViewModel>();
+                    });
+                    var mapper = new Mapper(config);
+
+                    var evenLogs = new ObservableCollection<DeviceLogViewModel>();                    
+                    int index = 0;
+                    foreach (var log in logs)
+                    {
+                        var lg = mapper.Map<DeviceLogViewModel>(log);
+                        lg.RowId = index++;
+                        evenLogs.Add(lg);
+                    }
+
+                    EventLogCollection = evenLogs;
                     var errors = EventLogCollection.Where(x => x.LogLevel.Equals("ERROR", StringComparison.OrdinalIgnoreCase)).ToList();
-                    ErrorLogCollection = new RangeObservableCollection<DeviceLog>(errors);
+                    ErrorLogCollection = new ObservableCollection<DeviceLogViewModel>(errors);
 
                     if (ErrorLogCollection.Count > 0)
                     {
@@ -413,6 +449,7 @@ namespace ViewModels
         {
             get { return timeLineIndex; }
             set { timeLineIndex = value;
+                LocalCache.SetActiveIndex(value);
                 OnPropertyChanged();
             }
         }
@@ -514,12 +551,12 @@ namespace ViewModels
                 var filteredLogs = errors.Where(x => IsHigh && GetErrorType(getErrorId(x)) == 3 ||
                                                      IsMedium && GetErrorType(getErrorId(x)) == 2 ||
                                                      IsLow && GetErrorType(getErrorId(x)) == 1).ToList();
-                ErrorLogCollection = new RangeObservableCollection<DeviceLog>(filteredLogs);
+                ErrorLogCollection = new ObservableCollection<DeviceLogViewModel>(filteredLogs);
             }
             else
             {
                 errors = EventLogCollection.Where(x => x.LogLevel.Equals("ERROR", StringComparison.OrdinalIgnoreCase)).ToList();
-                ErrorLogCollection = new RangeObservableCollection<DeviceLog>(errors);
+                ErrorLogCollection = new ObservableCollection<DeviceLogViewModel>(errors);
             }
         }
 
@@ -589,4 +626,43 @@ namespace ViewModels
 		}
 
 	}
+
+    public class DeviceLogViewModel : BaseViewModel
+    {
+        private int rowId;
+        private DateTime dateTime;
+        private string localTime;
+        private string procedureTime;
+        private string moduleName;
+        private string detail;
+        private string fileName;
+        private string line;
+        private string logLevel;
+        private string logType;
+        private string function;
+        private string fileSpec;
+        private string energyChannel;
+
+        public int RowId { get => rowId; set  
+                { rowId = value; OnPropertyChanged(); }
+        }
+
+        public DateTime DateTime { get => dateTime; set { dateTime = value; OnPropertyChanged(); } }
+        public string LocalTime { get => localTime; set { localTime = value; OnPropertyChanged(); } }
+        public string ProcedureTime { get => procedureTime; set { procedureTime = value; OnPropertyChanged(); } }
+        public string ModuleName { get => moduleName; set { moduleName = value; OnPropertyChanged(); } }
+        public string Detail { get => detail; set { detail = value; OnPropertyChanged(); } }
+        public string FileName { get => fileName; set { fileName = value; OnPropertyChanged(); } }
+        public string Line { get => line; set { line = value; OnPropertyChanged(); } }
+        public string LogLevel { get => logLevel; set { logLevel = value; OnPropertyChanged(); }}
+        public string LogType { get => logType; set { logType = value;  OnPropertyChanged(); } }
+        public string Function { get => function; set { function = value; OnPropertyChanged(); } }
+        public string FileSpec { get => fileSpec; set { fileSpec = value; OnPropertyChanged(); } }
+        public string EnergyChannel { get => energyChannel; set { energyChannel = value; OnPropertyChanged(); } }
+
+        public override string ToString()
+        {
+            return $"{LogLevel} {Detail}";
+        }
+    }
 }

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Workspace\Github\WPF\MedtronicLogViewer\MedtronicLogViewer\obj\Debug\net6.0-windows\
+C:\Workspace\Github\MedtronicLogViewer\MedtronicLogViewer\obj\Debug\net6.0-windows\
 MedtronicLogViewer
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Workspace\Github\WPF\MedtronicLogViewer\MedtronicLogViewer\App.xaml
+C:\Workspace\Github\MedtronicLogViewer\MedtronicLogViewer\App.xaml
 11407045341
 
 4-1689512043
-204-1528983831
+208-1242027311
 MainWindow.xaml;
 
 False

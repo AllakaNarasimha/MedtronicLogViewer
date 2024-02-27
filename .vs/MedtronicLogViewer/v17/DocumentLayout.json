@@ -1,0 +1,326 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Workspace\\Github\\MedtronicLogViewer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}|ViewModels\\ViewModels.csproj|c:\\workspace\\github\\medtroniclogviewer\\viewmodels\\logviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}|ViewModels\\ViewModels.csproj|solutionrelative:viewmodels\\logviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCADE39D-8138-47D4-AF04-D6F9D34898EF}|ScaleIndicator\\ScaleIndicator.csproj|c:\\workspace\\github\\medtroniclogviewer\\scaleindicator\\timelinecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCADE39D-8138-47D4-AF04-D6F9D34898EF}|ScaleIndicator\\ScaleIndicator.csproj|solutionrelative:scaleindicator\\timelinecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{387F3A0F-E889-4D18-89B4-5C4B18441F96}|MVVMBase\\MVVMBase.csproj|c:\\workspace\\github\\medtroniclogviewer\\mvvmbase\\converters\\incrementconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{387F3A0F-E889-4D18-89B4-5C4B18441F96}|MVVMBase\\MVVMBase.csproj|solutionrelative:mvvmbase\\converters\\incrementconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E59C4DF-77E4-4D3C-B0C5-97087EDB1CE0}|MedtronicLogViewer\\MedtronicLogViewer.csproj|c:\\workspace\\github\\medtroniclogviewer\\medtroniclogviewer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{3E59C4DF-77E4-4D3C-B0C5-97087EDB1CE0}|MedtronicLogViewer\\MedtronicLogViewer.csproj|solutionrelative:medtroniclogviewer\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\687bef3cc55d0895fe496dabcff8d794d125cc7e92e857c9428b9bf25e397b06\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\Dictionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\e47cea91dfed81225bea3e34d63bccde704cf53ccdeefe54b5b34e3e6053e1b1\\src\\libraries\\System.Private.CoreLib\\src\\System\\ThrowHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{387F3A0F-E889-4D18-89B4-5C4B18441F96}|MVVMBase\\MVVMBase.csproj|c:\\workspace\\github\\medtroniclogviewer\\mvvmbase\\converters\\gridspanvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{387F3A0F-E889-4D18-89B4-5C4B18441F96}|MVVMBase\\MVVMBase.csproj|solutionrelative:mvvmbase\\converters\\gridspanvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\82291e329b366ea0b8509630734a51606584803da76dffcf6bd8a10632bce270\\XamlObjectWriter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06187235-A75E-4C22-AD30-8AEB4F91120F}|BusinessLayer\\BusinessLayer.csproj|c:\\workspace\\github\\medtroniclogviewer\\businesslayer\\devlogmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06187235-A75E-4C22-AD30-8AEB4F91120F}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\devlogmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{387F3A0F-E889-4D18-89B4-5C4B18441F96}|MVVMBase\\MVVMBase.csproj|c:\\workspace\\github\\medtroniclogviewer\\mvvmbase\\rangeobservablecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{387F3A0F-E889-4D18-89B4-5C4B18441F96}|MVVMBase\\MVVMBase.csproj|solutionrelative:mvvmbase\\rangeobservablecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06187235-A75E-4C22-AD30-8AEB4F91120F}|BusinessLayer\\BusinessLayer.csproj|c:\\workspace\\github\\medtroniclogviewer\\businesslayer\\models\\devicelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06187235-A75E-4C22-AD30-8AEB4F91120F}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\models\\devicelog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06187235-A75E-4C22-AD30-8AEB4F91120F}|BusinessLayer\\BusinessLayer.csproj|c:\\workspace\\github\\medtroniclogviewer\\businesslayer\\localcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{06187235-A75E-4C22-AD30-8AEB4F91120F}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\localcache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\83616927926d14a9d63ba91b611a12293ac61079cc74be5d9c8aaec5dc9ed161\\XamlReader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\351e20cf83ec453790289350d59a43d121bc3e1f71e9117da619781f6cd6e098\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\ExecutionContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\e0e8e4d165216149b185dec9f2b2de936437b2c691a01554a70aa524bfb1d880\\Helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06187235-A75E-4C22-AD30-8AEB4F91120F}|BusinessLayer\\BusinessLayer.csproj|c:\\workspace\\github\\medtroniclogviewer\\businesslayer\\businesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{06187235-A75E-4C22-AD30-8AEB4F91120F}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\businesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}|ViewModels\\ViewModels.csproj|c:\\workspace\\github\\medtroniclogviewer\\viewmodels\\logreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBA4EFEA-01A4-40FF-9F0D-D8647204C779}|ViewModels\\ViewModels.csproj|solutionrelative:viewmodels\\logreader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 214,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f5cd1b51-c771-5648-966f-646d419b1e7c}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IncrementConverter.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\MVVMBase\\Converters\\IncrementConverter.cs",
+              "RelativeDocumentMoniker": "MVVMBase\\Converters\\IncrementConverter.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\MVVMBase\\Converters\\IncrementConverter.cs",
+              "RelativeToolTip": "MVVMBase\\Converters\\IncrementConverter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T16:38:54.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\MedtronicLogViewer\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MedtronicLogViewer\\MainWindow.xaml",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\MedtronicLogViewer\\MainWindow.xaml",
+              "RelativeToolTip": "MedtronicLogViewer\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-02-27T06:41:53.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ThrowHelper.cs",
+              "DocumentMoniker": "C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\e47cea91dfed81225bea3e34d63bccde704cf53ccdeefe54b5b34e3e6053e1b1\\src\\libraries\\System.Private.CoreLib\\src\\System\\ThrowHelper.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\SourceServer\\e47cea91dfed81225bea3e34d63bccde704cf53ccdeefe54b5b34e3e6053e1b1\\src\\libraries\\System.Private.CoreLib\\src\\System\\ThrowHelper.cs",
+              "ToolTip": "C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\e47cea91dfed81225bea3e34d63bccde704cf53ccdeefe54b5b34e3e6053e1b1\\src\\libraries\\System.Private.CoreLib\\src\\System\\ThrowHelper.cs",
+              "RelativeToolTip": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\SourceServer\\e47cea91dfed81225bea3e34d63bccde704cf53ccdeefe54b5b34e3e6053e1b1\\src\\libraries\\System.Private.CoreLib\\src\\System\\ThrowHelper.cs",
+              "ViewState": "AQIAAMUAAAAAAAAAAAAgwNQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T12:12:34.55Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GridSpanValidator.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\MVVMBase\\Converters\\GridSpanValidator.cs",
+              "RelativeDocumentMoniker": "MVVMBase\\Converters\\GridSpanValidator.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\MVVMBase\\Converters\\GridSpanValidator.cs",
+              "RelativeToolTip": "MVVMBase\\Converters\\GridSpanValidator.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAAFEAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T12:03:53.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LogViewModel.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\ViewModels\\LogViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LogViewModel.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\ViewModels\\LogViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LogViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T12:05:12.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TimeLineControl.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\ScaleIndicator\\TimeLineControl.cs",
+              "RelativeDocumentMoniker": "ScaleIndicator\\TimeLineControl.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\ScaleIndicator\\TimeLineControl.cs",
+              "RelativeToolTip": "ScaleIndicator\\TimeLineControl.cs",
+              "ViewState": "AQIAAPIAAAAAAAAAAAAAAAMBAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T16:23:05.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RangeObservableCollection.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\MVVMBase\\RangeObservableCollection.cs",
+              "RelativeDocumentMoniker": "MVVMBase\\RangeObservableCollection.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\MVVMBase\\RangeObservableCollection.cs",
+              "RelativeToolTip": "MVVMBase\\RangeObservableCollection.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAAAoAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T14:41:02.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LocalCache.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\LocalCache.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\LocalCache.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\LocalCache.cs",
+              "RelativeToolTip": "BusinessLayer\\LocalCache.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAmwBsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T08:51:37.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dictionary.cs",
+              "DocumentMoniker": "C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\687bef3cc55d0895fe496dabcff8d794d125cc7e92e857c9428b9bf25e397b06\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\Dictionary.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\SourceServer\\687bef3cc55d0895fe496dabcff8d794d125cc7e92e857c9428b9bf25e397b06\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\Dictionary.cs",
+              "ToolTip": "C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\687bef3cc55d0895fe496dabcff8d794d125cc7e92e857c9428b9bf25e397b06\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\Dictionary.cs",
+              "RelativeToolTip": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\SourceServer\\687bef3cc55d0895fe496dabcff8d794d125cc7e92e857c9428b9bf25e397b06\\src\\libraries\\System.Private.CoreLib\\src\\System\\Collections\\Generic\\Dictionary.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAgwMYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T16:05:09.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "XamlObjectWriter.cs",
+              "DocumentMoniker": "C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\82291e329b366ea0b8509630734a51606584803da76dffcf6bd8a10632bce270\\XamlObjectWriter.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\82291e329b366ea0b8509630734a51606584803da76dffcf6bd8a10632bce270\\XamlObjectWriter.cs",
+              "ToolTip": "C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\82291e329b366ea0b8509630734a51606584803da76dffcf6bd8a10632bce270\\XamlObjectWriter.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\82291e329b366ea0b8509630734a51606584803da76dffcf6bd8a10632bce270\\XamlObjectWriter.cs [Read Only]",
+              "ViewState": "AQIAAFIEAAAAAAAAAAAAwF0EAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T15:48:00.15Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ExecutionContext.cs",
+              "DocumentMoniker": "C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\351e20cf83ec453790289350d59a43d121bc3e1f71e9117da619781f6cd6e098\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\ExecutionContext.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\SourceServer\\351e20cf83ec453790289350d59a43d121bc3e1f71e9117da619781f6cd6e098\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\ExecutionContext.cs",
+              "ToolTip": "C:\\Users\\allakn2\\AppData\\Local\\SourceServer\\351e20cf83ec453790289350d59a43d121bc3e1f71e9117da619781f6cd6e098\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\ExecutionContext.cs",
+              "RelativeToolTip": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\SourceServer\\351e20cf83ec453790289350d59a43d121bc3e1f71e9117da619781f6cd6e098\\src\\libraries\\System.Private.CoreLib\\src\\System\\Threading\\ExecutionContext.cs",
+              "ViewState": "AQIAAMEAAAAAAAAAAAAcwM4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T16:38:55.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DevLogMapper.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\DevLogMapper.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\DevLogMapper.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\DevLogMapper.cs",
+              "RelativeToolTip": "BusinessLayer\\DevLogMapper.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T08:51:52.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DeviceLog.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\Models\\DeviceLog.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Models\\DeviceLog.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\Models\\DeviceLog.cs",
+              "RelativeToolTip": "BusinessLayer\\Models\\DeviceLog.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T08:16:08.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "XamlReader.cs",
+              "DocumentMoniker": "C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\83616927926d14a9d63ba91b611a12293ac61079cc74be5d9c8aaec5dc9ed161\\XamlReader.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\83616927926d14a9d63ba91b611a12293ac61079cc74be5d9c8aaec5dc9ed161\\XamlReader.cs",
+              "ToolTip": "C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\83616927926d14a9d63ba91b611a12293ac61079cc74be5d9c8aaec5dc9ed161\\XamlReader.cs",
+              "RelativeToolTip": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\83616927926d14a9d63ba91b611a12293ac61079cc74be5d9c8aaec5dc9ed161\\XamlReader.cs",
+              "ViewState": "AQIAAIIBAAAAAAAAAAAmwJABAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T16:21:58.835Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\e0e8e4d165216149b185dec9f2b2de936437b2c691a01554a70aa524bfb1d880\\Helper.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\e0e8e4d165216149b185dec9f2b2de936437b2c691a01554a70aa524bfb1d880\\Helper.cs",
+              "ToolTip": "C:\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\e0e8e4d165216149b185dec9f2b2de936437b2c691a01554a70aa524bfb1d880\\Helper.cs",
+              "RelativeToolTip": "..\\..\\..\\Users\\allakn2\\AppData\\Local\\Temp\\.vsdbgsrc\\e0e8e4d165216149b185dec9f2b2de936437b2c691a01554a70aa524bfb1d880\\Helper.cs",
+              "ViewState": "AQIAAHYBAAAAAAAAAAAmwIQBAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-26T14:58:59.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LogReader.cs",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\ViewModels\\LogReader.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LogReader.cs",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\ViewModels\\LogReader.cs",
+              "RelativeToolTip": "ViewModels\\LogReader.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-27T08:14:58.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BusinessLayer",
+              "DocumentMoniker": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\BusinessLayer.csproj",
+              "RelativeDocumentMoniker": "BusinessLayer\\BusinessLayer.csproj",
+              "ToolTip": "C:\\Workspace\\Github\\MedtronicLogViewer\\BusinessLayer\\BusinessLayer.csproj",
+              "RelativeToolTip": "BusinessLayer\\BusinessLayer.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-27T08:51:41.187Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

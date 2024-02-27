@@ -1,14 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "xNBFsbOozqqG64m5m5OU6gz+aKsR/6juN/JpkSY2QJTyJr8SBPk0OAYssttYqgrDYd2KoT1j5/Ig3dBMzXSIfg==",
+  "dgSpecHash": "OWh97mvmAtenPgmNMcy81zBWFxRT1ptG88FBj1+OIzvtD+k16HOiWWiyWf5L4z7mx6j0EPPdrGkzewVIWkzxvA==",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\Github\\WPF\\MedtronicLogViewer\\MedtronicLogViewer\\MedtronicLogViewer.csproj",
+  "projectFilePath": "C:\\Workspace\\Github\\MedtronicLogViewer\\MedtronicLogViewer\\MedtronicLogViewer.csproj",
   "expectedPackageFiles": [
+    "C:\\CI\\NugetPackageCache\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\CI\\NugetPackageCache\\controlzex\\4.4.0\\controlzex.4.4.0.nupkg.sha512",
     "C:\\CI\\NugetPackageCache\\csvhelper\\31.0.0\\csvhelper.31.0.0.nupkg.sha512",
     "C:\\CI\\NugetPackageCache\\mahapps.metro\\2.4.10\\mahapps.metro.2.4.10.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\CI\\NugetPackageCache\\microsoft.xaml.behaviors.wpf\\1.1.19\\microsoft.xaml.behaviors.wpf.1.1.19.nupkg.sha512",
     "C:\\CI\\NugetPackageCache\\system.linq.async\\4.0.0\\system.linq.async.4.0.0.nupkg.sha512",
+    "C:\\CI\\NugetPackageCache\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\CI\\NugetPackageCache\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
   ],
   "logs": []
